@@ -69,3 +69,17 @@ clear.addEventListener("click",(e)=>{
     document.querySelector("form").reset(); 
     document.getElementById("att").innerHTML="";
 });
+
+let themeToggle = document.getElementById("themeToggle");
+
+themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+        themeToggle.textContent = "☀️";
+    } else {
+        themeToggle.textContent = "🌙";
+    }
+});
+
+
