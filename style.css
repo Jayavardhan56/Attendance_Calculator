@@ -1,53 +1,182 @@
-body{
-    font-family: Arial, sans-serif;
+/* ===== Theme Variables ===== */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #222;
 
+    --header-bg: #66bfbf;
+    --header-text: #ffffff;
+    --header-border: #acdcee;
+
+    --card-bg: #ffffff;
+    --card-border: #e0e0e0;
+    --card-shadow: rgba(0, 0, 0, 0.12);
+
+    --label-color: #333;
+
+    --input-bg: #ffffff;
+    --input-border: #ccc;
+    --input-text: #222;
+
+    --btn-bg: #66bfbf;
+    --btn-text: #ffffff;
+    --btn-hover: #acdcee;
+
+    --result-bg: #f4fbfb;
+    --result-text: #004d4d;
+    --result-border: #66bfbf;
 }
-h1{
+
+/* ===== Dark Mode Overrides ===== */
+body.dark {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+
+    --header-bg: #1f6f6f;
+    --header-text: #ffffff;
+    --header-border: #2e8b8b;
+
+    --card-bg: #1e1e1e;
+    --card-border: #333;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+
+    --label-color: #cccccc;
+
+    --input-bg: #2a2a2a;
+    --input-border: #444;
+    --input-text: #e0e0e0;
+
+    --btn-bg: #66bfbf;
+    --btn-text: #ffffff;
+    --btn-hover: #2e8b8b;
+
+    --result-bg: #1a2f2f;
+    --result-text: #e0e0e0;
+    --result-border: #66bfbf;
+}
+
+/* ===== Base Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== Page ===== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* ===== Header ===== */
+h1 {
     text-align: center;
-    background-color: #66bfbf;
-    padding: 30px;
-    margin-top: 0px;
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 14px 10px;
+    margin-bottom: 24px;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-bottom: 4px solid var(--header-border);
 }
-.form{
-    margin: 20px auto;
-    max-width: 400px;
+
+/* ===== Card Form ===== */
+.form {
+    margin: 0 auto;
+    max-width: 420px;
+    background-color: var(--card-bg);
+    padding: 24px;
+    padding-top: 65px;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 6px 16px var(--card-shadow);
     display: flex;
-    gap: 15px;
-    text-align: left;
     flex-wrap: wrap;
+    gap: 16px;
+    position: relative; /* needed for toggle button */
 }
-.input{
+
+/* ===== Theme Toggle Button ===== */
+.theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.15);
+    opacity: 0.85;
+}
+
+/* ===== Input Rows ===== */
+.input {
     width: 100%;
     display: flex;
     align-items: center;
-
 }
-.form input{
+
+/* ===== Labels ===== */
+.form label {
+    width: 140px;
+    font-weight: 600;
+    color: var(--label-color);
+}
+
+/* ===== Inputs ===== */
+.form input {
     flex-grow: 1;
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #ccc;
+    padding: 9px 10px;
+    font-size: 15px;
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    border: 1px solid var(--input-border);
     border-radius: 4px;
 }
-.form label{
-    margin-right: 10px;
-    flex-shrink: 0;
-}
-.form button{
-    padding: 10px 16px;
-    font-size: 16px;
-    background-color: #66bfbf;
+
+/* ===== Buttons ===== */
+.form button {
+    padding: 10px 14px;
+    font-size: 14px;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    align-items: center;
 }
-.form button:hover{
-    background-color: #acdcee; 
+
+.form button:hover {
+    background-color: var(--btn-hover);
 }
-.att{
-    display: flex;
+
+/* ===== Result Output ===== */
+h4 {
+    margin: 25px auto 0;
+    max-width: 420px;
+    padding: 12px;
     text-align: center;
-    flex-wrap: wrap;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--result-text);
+    background-color: var(--result-bg);
+    border-left: 4px solid var(--result-border);
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 480px) {
+    .input {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form label {
+        width: 100%;
+        margin-bottom: 4px;
+    }
 }
