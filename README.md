@@ -4,3 +4,5 @@ This is a simple website which helps you to calculate your attendance percentage
 We will try to add features like if you take leave how your attendance will be reflected and many more.
 
 Stay Tuned for more Updates!
+
+!!!
